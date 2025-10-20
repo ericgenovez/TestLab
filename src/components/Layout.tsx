@@ -42,7 +42,7 @@ export function Layout({ children }: LayoutProps) {
         <div className="flex items-center h-16 border-b px-6">
           <Link to="/dashboard" className="flex items-center gap-2">
             <div className="h-8 w-8 rounded-lg bg-primary flex items-center justify-center">
-              <span className="text-primary-foreground font-bold text-lg">T</span>
+              <span className="text-primary-foreground font-extrabold text-lg">TL</span>
             </div>
             <span className="font-semibold text-lg text-foreground">Training System</span>
           </Link>

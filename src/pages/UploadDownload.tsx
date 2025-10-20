@@ -28,6 +28,7 @@ export default function UploadDownload() {
       }
 
       toast({
+        className: 'bg-green-500 text-white',
         title: 'Arquivo carregado!',
         description: `${file.name} (${(file.size / 1024).toFixed(2)} KB)`,
       });
@@ -47,7 +48,7 @@ export default function UploadDownload() {
     const blob = new Blob([csvContent], { type: 'text/csv;charset=utf-8;' });
     const link = document.createElement('a');
     const url = URL.createObjectURL(blob);
-    
+
     link.setAttribute('href', url);
     link.setAttribute('download', 'dados-usuarios.csv');
     link.style.visibility = 'hidden';
@@ -56,6 +57,7 @@ export default function UploadDownload() {
     document.body.removeChild(link);
 
     toast({
+      className: 'bg-yellow-500 text-white',
       title: 'Download iniciado!',
       description: 'O arquivo CSV está sendo baixado.',
     });
@@ -97,7 +99,7 @@ export default function UploadDownload() {
                 <Upload className="h-4 w-4 mr-2" />
                 Escolher Arquivo
               </Button>
-              
+
               {uploadedFile && (
                 <div className="flex items-center gap-2">
                   {uploadedFile.type.startsWith('image/') ? (
@@ -153,7 +155,7 @@ export default function UploadDownload() {
               <Download className="h-4 w-4 mr-2" />
               Download CSV
             </Button>
-            
+
             <div className="mt-4 p-4 border rounded-lg bg-muted">
               <p className="text-sm text-muted-foreground">
                 O arquivo contém dados de usuários em formato CSV com as colunas:

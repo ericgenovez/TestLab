@@ -99,7 +99,7 @@ export default function TodoList() {
                 {todos.map((todo) => (
                   <div
                     key={todo.id}
-                    className="flex items-center gap-3 p-3 rounded-lg border bg-card hover:bg-accent/50 transition-colors"
+                    className="flex items-center gap-3 p-3 rounded-lg border bg-card hover:bg-green-300 transition-colors"
                     data-testid={`todo-item-${todo.id}`}
                   >
                     <Checkbox
@@ -118,6 +118,7 @@ export default function TodoList() {
                       {todo.text}
                     </span>
                     <Button
+                      className='bg-white hover:bg-slate-50'
                       variant="ghost"
                       size="sm"
                       onClick={() => deleteTodo(todo.id)}

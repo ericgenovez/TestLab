@@ -71,8 +71,9 @@ export default function Register() {
     setIsSubmitting(true);
     // Simulate API call
     await new Promise(resolve => setTimeout(resolve, 2000));
-    
+
     toast({
+      className: 'bg-green-500 text-white',
       title: 'Cadastro realizado!',
       description: 'Os dados foram salvos com sucesso.',
     });
@@ -161,7 +162,7 @@ export default function Register() {
                   value={formData.gender}
                   onValueChange={(value) => setFormData({ ...formData, gender: value })}
                 >
-                  <SelectTrigger 
+                  <SelectTrigger
                     data-testid="gender-select"
                     className={errors.gender ? 'border-destructive' : ''}
                   >
@@ -202,9 +203,9 @@ export default function Register() {
                     Escolher imagem
                   </Button>
                   {imagePreview && (
-                    <img 
-                      src={imagePreview} 
-                      alt="Preview" 
+                    <img
+                      src={imagePreview}
+                      alt="Preview"
                       className="h-16 w-16 rounded-full object-cover"
                       data-testid="image-preview"
                     />
@@ -217,7 +218,7 @@ export default function Register() {
                 <Checkbox
                   id="terms"
                   checked={formData.acceptTerms}
-                  onCheckedChange={(checked) => 
+                  onCheckedChange={(checked) =>
                     setFormData({ ...formData, acceptTerms: checked as boolean })
                   }
                   data-testid="terms-checkbox"
@@ -235,8 +236,8 @@ export default function Register() {
               </div>
 
               {/* Submit */}
-              <Button 
-                type="submit" 
+              <Button
+                type="submit"
                 className="w-full"
                 disabled={isSubmitting}
                 data-testid="submit-button"

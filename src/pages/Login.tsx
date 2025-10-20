@@ -59,7 +59,7 @@ export default function Login() {
     try {
       await login(email, password);
       toast({
-        color: 'success',
+        className: 'bg-green-500 text-white',
         title: 'Login realizado!',
         description: 'Bem-vindo ao sistema.',
       });
@@ -85,8 +85,8 @@ export default function Login() {
         <CardHeader className="space-y-1">
           <div className="flex justify-center mb-4">
             <div className="h-12 w-12 rounded-xl bg-primary flex items-center justify-center">
-              <span className="text-primary-foreground font-bold text-2xl">
-                T
+              <span className="text-primary-foreground font-extrabold text-2xl">
+                TL
               </span>
             </div>
           </div>
